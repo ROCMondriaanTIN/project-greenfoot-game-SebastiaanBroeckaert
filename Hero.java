@@ -19,16 +19,20 @@ public class Hero extends Mover
         setImage("p3.png");
     }
     @Override
-    public void act() {
+    public void act()
+    {
         handleInput();
         velocityX *= drag;
         velocityY += acc;
-        if (velocityY > gravity) {
+        if (velocityY > gravity)
+        {
             velocityY = gravity;
         }
         applyVelocity();
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
+        for (Actor enemy : getIntersectingObjects(Enemy.class))
+        {
+            if (enemy != null)
+            {
                 getWorld().removeObject(this);
                 break;
             }
