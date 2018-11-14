@@ -75,7 +75,7 @@ public class Hero extends Mover
     }
     boolean onGround()
     {
-        Actor under = getObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
+        Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
         return under != null;
     }
     public void checkFalling()
