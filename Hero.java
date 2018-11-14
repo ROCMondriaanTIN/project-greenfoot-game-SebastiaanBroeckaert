@@ -57,12 +57,12 @@ public class Hero extends Mover
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("a")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("left"))
         {
-            velocityX += 2;
+            velocityX -= 2;
         }
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("d")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
         {
-            velocityX -= 2;
+            velocityX += 2;
         }
     }
     public int getWidth()
