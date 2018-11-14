@@ -41,28 +41,28 @@ public class Hero extends Mover
     public void handleInput()
     {
         if (Greenfoot.isKeyDown("w") && (onGround() == true)
-        || (Greenfoot.isKeyDown("up") && (onGround() == true)
-        || (Greenfoot.isKeyDown("spacebar") && (onGround() == true))
+        || Greenfoot.isKeyDown("up") && (onGround() == true)
+        || Greenfoot.isKeyDown("spacebar") && (onGround() == true))
         {
             velocityY = -15;
         }
-        if (Greenfoot.isKeyDown("a")|| (Greenfoot.isKeyDown("left"))
+        if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
         {
             velocityX = -5;
         }
-        if (Greenfoot.isKeyDown("d") || (Greenfoot.isKeyDown("right"))
+        if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             velocityX = 5;
         }
-        if(Greenfoot.isKeyDown("shift") && (Greenfoot.isKeyDown("a")
-        || (Greenfoot.isKeyDown("shift") && (Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("a")
+        || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("left"))
         {
-            velocetiyX += 2;
+            velocityX += 2;
         }
-        if(Greenfoot.isKeyDown("shift") && (Greenfoot.isKeyDown("d")
-        || (Greenfoot.isKeyDown("shift") && (Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("d")
+        || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
         {
-            velocetyX -= 2;
+            velocityX -= 2;
         }
     }
     public int getWidth()
