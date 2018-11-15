@@ -30,7 +30,7 @@ public class Startscherm extends World
     }
     public void act()
     {
-        if(Greenfoot.isKeyDown("spacebar"))
+        if(Greenfoot.isKeyDown("space"))
         {
             Greenfoot.setWorld(new SelectLevel());
         }

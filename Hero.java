@@ -42,7 +42,7 @@ public class Hero extends Mover
     {
         if (Greenfoot.isKeyDown("w") && (onGround() == true)
         || Greenfoot.isKeyDown("up") && (onGround() == true)
-        || Greenfoot.isKeyDown("spacebar") && (onGround() == true))
+        || Greenfoot.isKeyDown("space") && (onGround() == true))
         {
             velocityY = -15;
         }
