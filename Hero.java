@@ -78,15 +78,4 @@ public class Hero extends Mover
         Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
         return under != null;
     }
-    public void checkFalling()
-    {
-        if(onGround() == false)
-        {
-            applyVelocity();
-        }
-        if(onGround() == true)
-        {
-            velocityY = 0;
-        }
-    }
 }
