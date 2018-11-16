@@ -34,7 +34,7 @@ public class Hero extends Mover
             if (enemy != null)
             {
                 getWorld().removeObject(this);
-                break;
+                return;
             }
         }
     }
