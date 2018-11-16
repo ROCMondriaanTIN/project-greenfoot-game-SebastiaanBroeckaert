@@ -14,6 +14,6 @@ public class StartschermAfbeelding extends Actor
      */
     public void act() 
     {
-        
+        //
     }  
 }

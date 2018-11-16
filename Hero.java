@@ -33,7 +33,7 @@ public class Hero extends Mover
         {
             if (enemy != null)
             {
-                getWorld().removeObject(this);
+                setLocation(93, 2835);
                 return;
             }
         }
