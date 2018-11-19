@@ -10,6 +10,7 @@ public class Hero extends Mover
     private final double gravity;
     private final double acc;
     private final double drag;
+    private int leven = 3;
     public Hero()
     {
         super();
@@ -33,8 +34,16 @@ public class Hero extends Mover
         {
             if (enemy != null)
             {
-                setLocation(93, 2835);
-                return;
+                leven --;
+                if(leven != 0)
+                {
+                    setLocation(93, 2835);
+                    return;
+                }
+                //else
+                //{
+                    //
+                //}
             }
         }
     }
