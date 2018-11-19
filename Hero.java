@@ -42,7 +42,9 @@ public class Hero extends Mover
                 }
                 //else
                 //{
-                    //
+                    //GameOver gameover = new GameOver();
+                    //MyWorld.addObject(gameover, MyWorld.getWidth()/2, MyWorld.getHeight()/2);
+                    //MyWorld.removeObject(this);
                 //}
             }
         }
