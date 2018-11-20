@@ -1,19 +1,33 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class leven here.
+ * Write a description of class Leven here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Leven extends Mover
 {
+    int leven = 3;
+    public Leven()
+    {
+        super();
+        setImage("hud_p1.png");
+    }
     /**
-     * Act - do whatever the leven wants to do. This method is called whenever
+     * Act - do whatever the Leven wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
+        applyVelocity();
+        for(Actor hero : getIntersectingObjects(Hero.class))
+        {
+            if(hero != null)
+            {
+                getWorld().removeObject(this);
+                break;
+            }
+        }
     }    
 }

@@ -12,7 +12,7 @@ public class Dia extends Mover
     public Dia()
     {
         super();
-        setImage("gemBlue");
+        setImage("gemBlue.png");
         diaCounter ++;
     }
     /**
@@ -22,7 +22,6 @@ public class Dia extends Mover
     public void act() 
     {
         applyVelocity();
-        
         for(Actor hero : getIntersectingObjects(Hero.class))
         {
             if(hero != null)

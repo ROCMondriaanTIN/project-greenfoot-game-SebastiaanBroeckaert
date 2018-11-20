@@ -20,7 +20,9 @@ public class Instructie extends World
     }
     private void prepare()
     {
+        Instr instr = new Instr();
         Terug terug = new Terug();
+        addObject(instr, 500, 400);
         addObject(terug, 860, 60);
     }
 }
