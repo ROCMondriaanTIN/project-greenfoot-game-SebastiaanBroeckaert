@@ -21,6 +21,6 @@ public class Instructie extends World
     private void prepare()
     {
         Terug terug = new Terug();
-        addObject(terug, 850, 130);
+        addObject(terug, 860, 60);
     }
 }
