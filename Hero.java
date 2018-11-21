@@ -10,7 +10,8 @@ public class Hero extends Mover
     private final double gravity;
     private final double acc;
     private final double drag;
-    private int leven = 3;
+    protected static int leven = 3;
+    protected static int levelLevens;
     public Hero()
     {
         super();
@@ -19,10 +20,25 @@ public class Hero extends Mover
         drag = 0.8;
         setImage("p3.png");
     }
+    public void levens()
+    {
+        Actor l = getOneIntersectingObject(Leven.class);
+        if(l != null)
+        {
+            getWorld().removeObject(l);
+            leven ++;
+            levelLevens ++;
+            if(levelLevens == 4)
+            {
+                Greenfoot.setWorld(new SelectLevel());
+            }
+        }
+    }
     @Override
     public void act()
     {
         handleInput();
+        levens();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity)

@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Leven extends Mover
 {
-    int leven = 3;
     public Leven()
     {
         super();
@@ -26,6 +25,7 @@ public class Leven extends Mover
             if(hero != null)
             {
                 getWorld().removeObject(this);
+                Hero.leven ++;
                 break;
             }
         }
