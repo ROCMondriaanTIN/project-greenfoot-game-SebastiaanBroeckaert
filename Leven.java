@@ -13,6 +13,10 @@ public class Leven extends Mover
         super();
         setImage("hud_p1.png");
     }
+    public void addedToWorld(World w)
+    {
+        getWorld();
+    }
     /**
      * Act - do whatever the Leven wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,14 +24,5 @@ public class Leven extends Mover
     public void act() 
     {
         applyVelocity();
-        for(Actor hero : getIntersectingObjects(Hero.class))
-        {
-            if(hero != null)
-            {
-                getWorld().removeObject(this);
-                Hero.leven ++;
-                break;
-            }
-        }
     }    
 }

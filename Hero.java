@@ -20,17 +20,23 @@ public class Hero extends Mover
         drag = 0.8;
         setImage("p3.png");
     }
+    public void addedToWorld(World w)
+    {
+        getWorld();
+    }
     public void levens()
     {
         Actor l = getOneIntersectingObject(Leven.class);
         if(l != null)
         {
+            Hero.leven ++;
+            Hero.levelLevens ++;
+            Punten.scoreToevoegenLeven();
             getWorld().removeObject(l);
-            leven ++;
-            levelLevens ++;
             if(levelLevens == 4)
             {
                 Greenfoot.setWorld(new SelectLevel());
+                Hero.levelLevens = 0;
             }
         }
     }

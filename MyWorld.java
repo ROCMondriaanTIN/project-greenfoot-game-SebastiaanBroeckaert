@@ -9,7 +9,7 @@ public class MyWorld extends World {
 
     private CollisionEngine ce;
     
-    //Punten pu;
+    
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -79,9 +79,8 @@ public class MyWorld extends World {
 {6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48},
 
         };
-        // kreeer een scoreboard
-        //pu = new Punten();
-        //addObject(pu, getWidth()/2,430);
+        // Creeer een scoreboard
+        Punten pu = new Punten();
 
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
         TileEngine te = new TileEngine(this, 60, 60, map);
@@ -113,6 +112,7 @@ public class MyWorld extends World {
         addObject(up2, 1810, 2895);
         addObject(up3, 3215, 2055);
         addObject(up4, 6765, 2835);
+        addObject(pu, 830, 45);
         
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
@@ -120,10 +120,6 @@ public class MyWorld extends World {
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
     }
-    //public void addScore(int aantal)
-    //{
-        //pu.addScore(aantal);
-    //}
     @Override
     public void act() {
         ce.update();

@@ -9,11 +9,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Twee extends Actor
 {
     /**
-     * Act - do whatever the Twee wants to do. This method is called whenever
+     * Act - do whatever the Een wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        click();
+    }  
+    private void click()
+    {
+        if(Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new LevelTwee());
+        }
+    }   
 }
