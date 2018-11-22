@@ -11,19 +11,6 @@ public class BadGuy extends Mover
     private final double gravity;
     private final double acc;
     private final double drag;
-    private GreenfootImage run1r = new GreenfootImage("undercover_walk1.png");
-    private GreenfootImage run2r = new GreenfootImage("undercover_walk2.png");
-    private GreenfootImage run3r = new GreenfootImage("undercover_walk3.png");
-    private GreenfootImage run4r = new GreenfootImage("undercover_walk4.png");
-    private GreenfootImage run5r = new GreenfootImage("undercover_walk5.png");
-    private GreenfootImage run6r = new GreenfootImage("undercover_walk6.png");
-    private GreenfootImage run7r = new GreenfootImage("undercover_walk7.png");
-    private GreenfootImage run8r = new GreenfootImage("undercover_walk8.png");
-    private GreenfootImage run9r = new GreenfootImage("undercover_walk9.png");
-    private GreenfootImage run10r = new GreenfootImage("undercover_walk10.png");
-    private GreenfootImage run11r = new GreenfootImage("undercover_walk11.png");
-    private int frame = 1;
-    private int animationCounter = 0;
     public BadGuy()
     {
         super();
@@ -46,7 +33,6 @@ public class BadGuy extends Mover
         velocityX *= drag;
         velocityY += acc;
         applyVelocity();
-        animationCounter ++;
     }  
     public void handleInput()
     {
@@ -59,88 +45,22 @@ public class BadGuy extends Mover
         if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
         {
             velocityX = -5;
-            if(animationCounter % 11 == 0)
-            {
-                animateRight();
-            }
         }
         if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             velocityX = 5;
-            if(animationCounter % 11 == 0)
-            {
-                animateRight();
-            }
         }
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("a")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("left"))
         {
             velocityX -= 2;
-            if(animationCounter % 11 == 0)
-            {
-                animateRight();
-            }
         }
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("d")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
         {
             velocityX += 2;
-            if(animationCounter % 11 == 0)
-            {
-                animateRight();
-            }
         }
         getImage().mirrorHorizontally();
-    }
-    public void animateRight()
-    {
-        if(frame ==1)
-        {
-            setImage(run1r);
-        }
-        else if(frame ==2)
-        {
-            setImage(run2r);
-        }
-        else if(frame ==3)
-        {
-            setImage(run3r);
-        }
-        else if(frame ==4)
-        {
-            setImage(run4r);
-        }
-        else if(frame ==5)
-        {
-            setImage(run5r);
-        }
-        else if(frame ==6)
-        {
-            setImage(run6r);
-        }
-        else if(frame ==7)
-        {
-            setImage(run7r);
-        }
-        else if(frame ==8)
-        {
-            setImage(run8r);
-        }
-        else if(frame ==9)
-        {
-            setImage(run9r);
-        }
-        else if(frame ==10)
-        {
-            setImage(run10r);
-        }
-        else if(frame ==11)
-        {
-            setImage(run11r);
-            frame = 1;
-            return;
-        }
-        frame ++;
     }
     public int getWidth()
     {

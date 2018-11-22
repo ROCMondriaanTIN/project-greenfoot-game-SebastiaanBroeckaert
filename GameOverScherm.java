@@ -16,7 +16,8 @@ public class GameOverScherm extends World
     public GameOverScherm()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1); 
+        super(1000, 800, 1);
+        Punten.punten = 0;
         prepare();
     }
     private void prepare()

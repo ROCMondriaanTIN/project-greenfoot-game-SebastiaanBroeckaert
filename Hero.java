@@ -12,19 +12,6 @@ public class Hero extends Mover
     private final double drag;
     protected static int leven = 3;
     protected static int levelLevens;
-    private GreenfootImage run1r = new GreenfootImage("p3_walk01.png");
-    private GreenfootImage run2r = new GreenfootImage("p3_walk02.png");
-    private GreenfootImage run3r = new GreenfootImage("p3_walk03.png");
-    private GreenfootImage run4r = new GreenfootImage("p3_walk04.png");
-    private GreenfootImage run5r = new GreenfootImage("p3_walk05.png");
-    private GreenfootImage run6r = new GreenfootImage("p3_walk06.png");
-    private GreenfootImage run7r = new GreenfootImage("p3_walk07.png");
-    private GreenfootImage run8r = new GreenfootImage("p3_walk08.png");
-    private GreenfootImage run9r = new GreenfootImage("p3_walk09.png");
-    private GreenfootImage run10r = new GreenfootImage("p3_walk10.png");
-    private GreenfootImage run11r = new GreenfootImage("p3_walk11.png");
-    private int frame = 1;
-    private int animationCounter = 0;
     public Hero()
     {
         super();
@@ -65,7 +52,6 @@ public class Hero extends Mover
             velocityY = gravity;
         }
         applyVelocity();
-        animationCounter ++;
         for (Actor enemy : getIntersectingObjects(Enemy.class))
         {
             if (enemy != null)
@@ -93,96 +79,34 @@ public class Hero extends Mover
         || Greenfoot.isKeyDown("up") && (onGround() == true)
         || Greenfoot.isKeyDown("space") && (onGround() == true))
         {
-            velocityY = -15;
+             velocityY = -15;
         }
         if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
         {
             velocityX = -5;
-            getImage().mirrorHorizontally();
-            if(animationCounter % 11 == 0)
-            {
-                animateRight();
-            }
         }
-        if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
+        if (Greenfoot.isKeyDown("d")|| Greenfoot.isKeyDown("right"))
         {
             velocityX = 5;
-            getImage().mirrorHorizontally();
-            if(animationCounter % 11 == 0)
-            {
-                animateRight();
-            }
         }
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("a")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("left"))
         {
             velocityX -= 2;
-            getImage().mirrorHorizontally();
-            if(animationCounter % 11 == 0)
-            {
-                animateRight();
-            }
         }
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("d")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
         {
             velocityX += 2;
-            getImage().mirrorHorizontally();
-            if(animationCounter % 11 == 0)
-            {
-                animateRight();
-            }
         }
-    }
-    public void animateRight()
-    {
-        if(frame ==1)
+        if(onGround() == true)
         {
-            setImage(run1r);
+            setImage("p3.png");
         }
-        else if(frame ==2)
+        if(onGround() == false)
         {
-            setImage(run2r);
+            setImage("p3_jump.png");
         }
-        else if(frame ==3)
-        {
-            setImage(run3r);
-        }
-        else if(frame ==4)
-        {
-            setImage(run4r);
-        }
-        else if(frame ==5)
-        {
-            setImage(run5r);
-        }
-        else if(frame ==6)
-        {
-            setImage(run6r);
-        }
-        else if(frame ==7)
-        {
-            setImage(run7r);
-        }
-        else if(frame ==8)
-        {
-            setImage(run8r);
-        }
-        else if(frame ==9)
-        {
-            setImage(run9r);
-        }
-        else if(frame ==10)
-        {
-            setImage(run10r);
-        }
-        else if(frame ==11)
-        {
-            setImage(run11r);
-            frame = 1;
-            return;
-        }
-        frame ++;
     }
     public int getWidth()
     {
