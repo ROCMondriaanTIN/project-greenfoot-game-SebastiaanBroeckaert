@@ -1,92 +1,53 @@
-
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- *
- * @author R. Springer
+ * Write a description of class BadGuy here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Hero extends Mover
+public class BadGuy extends Mover
 {
     private final double gravity;
     private final double acc;
     private final double drag;
-    protected static int leven = 3;
-    protected static int levelLevens;
-    private GreenfootImage run1r = new GreenfootImage("p3_walk01.png");
-    private GreenfootImage run2r = new GreenfootImage("p3_walk02.png");
-    private GreenfootImage run3r = new GreenfootImage("p3_walk03.png");
-    private GreenfootImage run4r = new GreenfootImage("p3_walk04.png");
-    private GreenfootImage run5r = new GreenfootImage("p3_walk05.png");
-    private GreenfootImage run6r = new GreenfootImage("p3_walk06.png");
-    private GreenfootImage run7r = new GreenfootImage("p3_walk07.png");
-    private GreenfootImage run8r = new GreenfootImage("p3_walk08.png");
-    private GreenfootImage run9r = new GreenfootImage("p3_walk09.png");
-    private GreenfootImage run10r = new GreenfootImage("p3_walk10.png");
-    private GreenfootImage run11r = new GreenfootImage("p3_walk11.png");
+    private GreenfootImage run1r = new GreenfootImage("undercover_walk1.png");
+    private GreenfootImage run2r = new GreenfootImage("undercover_walk2.png");
+    private GreenfootImage run3r = new GreenfootImage("undercover_walk3.png");
+    private GreenfootImage run4r = new GreenfootImage("undercover_walk4.png");
+    private GreenfootImage run5r = new GreenfootImage("undercover_walk5.png");
+    private GreenfootImage run6r = new GreenfootImage("undercover_walk6.png");
+    private GreenfootImage run7r = new GreenfootImage("undercover_walk7.png");
+    private GreenfootImage run8r = new GreenfootImage("undercover_walk8.png");
+    private GreenfootImage run9r = new GreenfootImage("undercover_walk9.png");
+    private GreenfootImage run10r = new GreenfootImage("undercover_walk10.png");
+    private GreenfootImage run11r = new GreenfootImage("undercover_walk11.png");
     private int frame = 1;
     private int animationCounter = 0;
-    public Hero()
+    public BadGuy()
     {
         super();
         gravity = 9.807;
         acc = 0.6;
         drag = 0.8;
-        setImage("p3.png");
+        setImage("nudercover_three_eye.png");
     }
     public void addedToWorld(World w)
     {
         getWorld();
     }
-    public void levens()
-    {
-        Actor l = getOneIntersectingObject(Leven.class);
-        if(l != null)
-        {
-            Hero.leven ++;
-            Hero.levelLevens ++;
-            Punten.scoreToevoegenLeven();
-            getWorld().removeObject(l);
-            if(levelLevens == 4)
-            {
-                Greenfoot.setWorld(new SelectLevel());
-                Hero.levelLevens = 0;
-            }
-        }
-    }
-    @Override
-    public void act()
+    /**
+     * Act - do whatever the BadGuy wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
     {
         handleInput();
-        levens();
         velocityX *= drag;
         velocityY += acc;
-        if (velocityY > gravity)
-        {
-            velocityY = gravity;
-        }
         applyVelocity();
         animationCounter ++;
-        for (Actor enemy : getIntersectingObjects(Enemy.class))
-        {
-            if (enemy != null)
-            {
-                leven --;
-                if(leven != 0)
-                {
-                    //if(World == MyWorld())
-                    //{
-                        setLocation(95, 2835);
-                        return;
-                    //}
-                    
-                }
-                else
-                {
-                    Greenfoot.setWorld(new GameOverScherm());
-                }
-            }
-        }
-    }
+    }  
     public void handleInput()
     {
         if (Greenfoot.isKeyDown("w") && (onGround() == true)
@@ -98,7 +59,6 @@ public class Hero extends Mover
         if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
         {
             velocityX = -5;
-            getImage().mirrorHorizontally();
             if(animationCounter % 11 == 0)
             {
                 animateRight();
@@ -107,7 +67,6 @@ public class Hero extends Mover
         if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             velocityX = 5;
-            getImage().mirrorHorizontally();
             if(animationCounter % 11 == 0)
             {
                 animateRight();
@@ -117,7 +76,6 @@ public class Hero extends Mover
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("left"))
         {
             velocityX -= 2;
-            getImage().mirrorHorizontally();
             if(animationCounter % 11 == 0)
             {
                 animateRight();
@@ -127,12 +85,12 @@ public class Hero extends Mover
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
         {
             velocityX += 2;
-            getImage().mirrorHorizontally();
             if(animationCounter % 11 == 0)
             {
                 animateRight();
             }
         }
+        getImage().mirrorHorizontally();
     }
     public void animateRight()
     {

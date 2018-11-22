@@ -17,7 +17,6 @@ public class Dia extends Mover
     {
         super();
         setImage("gemBlue.png");
-        diaCounter ++;
     }
     /**
      * Act - do whatever the Dia wants to do. This method is called whenever
@@ -31,6 +30,7 @@ public class Dia extends Mover
             if(hero != null)
             {
                 Punten.scoreToevoegenDia();
+                diaCounter ++;
                 getWorld().removeObject(this);
                 break;
             }
