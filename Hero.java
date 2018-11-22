@@ -33,7 +33,7 @@ public class Hero extends Mover
             Hero.levelLevens ++;
             Punten.scoreToevoegenLeven();
             getWorld().removeObject(l);
-            if(levelLevens == 4)
+            if(levelLevens == 4 /*|| World() == SelectLevel()*/)
             {
                 Greenfoot.setWorld(new SelectLevel());
                 Hero.levelLevens = 0;
@@ -99,13 +99,13 @@ public class Hero extends Mover
         {
             velocityX += 2;
         }
-        if(onGround() == true)
-        {
-            setImage("p3.png");
-        }
         if(onGround() == false)
         {
             setImage("p3_jump.png");
+        }
+        if(onGround() == true)
+        {
+            setImage("p3.png");
         }
     }
     public int getWidth()
