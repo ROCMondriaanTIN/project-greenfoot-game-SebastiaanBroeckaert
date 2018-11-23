@@ -32,7 +32,11 @@ public class Dia extends Mover
                 Punten.scoreToevoegenDia();
                 diaCounter ++;
                 getWorld().removeObject(this);
-                break;
+                return;
+            }
+            if(diaCounter == 9)
+            {
+                Greenfoot.setWorld(new BonusEen());
             }
         }
     }    

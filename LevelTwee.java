@@ -114,6 +114,7 @@ public class LevelTwee extends World
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+        ce.addCollidingMover(bG);
     }
     @Override
     public void act()
