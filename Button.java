@@ -8,6 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Button extends Mover
 {
+    private CollisionEngine collisionEngine;
+    private TileEngine tileEngine;
+    public Button()
+    {
+        this.collisionEngine = collisionEngine;
+        this.tileEngine = tileEngine;
+    }
     public void addedToWorld(World w)
     {
         getWorld();
@@ -19,11 +26,15 @@ public class Button extends Mover
     public void act() 
     {
         applyVelocity();
+        List<Tile> tiles = collisionEngine.getCollidingTiles(this, true);
         for(Actor badguy : getIntersectingObjects(BadGuy.class))
         {
             if(badguy != null)
             {
-                //LevelTwee() "1" = "-1";
+                if (tile.type == TileType.BOX)
+                {
+                    tileEngine.removeTile(Tile);
+                }
                 break;
             }
         }

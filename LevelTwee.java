@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LevelTwee extends World
 {
     private CollisionEngine ce;
+    private TileEngine te;
     /**
      * Constructor for objects of class LevelTwee.
      * 
@@ -67,19 +68,22 @@ public class LevelTwee extends World
 {48,48,48,48,48,10,10,10,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,0,0,0,0,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,61,11,11,11,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,},
 {48,48,48,48,48,10,10,10,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,0,0,0,0,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,10,10,10,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,},
 {48,48,48,48,48,10,10,10,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,0,0,0,0,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,10,10,10,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,},
-{48,48,48,48,48,10,10,10,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,0,0,0,0,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,10,10,10,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,},
+{48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,0,0,0,0,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,},
         };
-        // Creeer een scoreboard
-        Punten pu = new Punten();
+
 
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
         TileEngine te = new TileEngine(this, 60, 60, map);
+        te.setTileFactory(new TileFactory());
+        te.setMap(map);
         // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
         // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
         Camera camera = new Camera(te);
+        ce = new CollisionEngine(te, camera);
+
         // Declareren en initialiseren van een main karakter (pink eye) van het spel mijne heet Hero.
         //Deze klasse moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
+        Hero hero = new Hero(ce, te);
         // Declareren en initaliseren van de BadGuy (three eye) van de game
         BadGuy bG = new BadGuy();
         //Declareren en initialiseren van de dia klassen
@@ -92,7 +96,8 @@ public class LevelTwee extends World
         Leven up4 = new Leven();
         //Declareren en initaliseren van de knop (Button).
         Button k = new Button();
-
+        // Creeer een scoreboard
+        Punten pu = new Punten();
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
@@ -115,6 +120,8 @@ public class LevelTwee extends World
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
         ce.addCollidingMover(bG);
+        camera.act();
+        hero.act();
     }
     @Override
     public void act()

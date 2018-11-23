@@ -15,8 +15,8 @@ public class Water extends Tile
     public void act() 
     {
     }  
-    public Water(String image, int width, int heigth)
+    public Water(String image, int width, int heigth, TileType type)
     {
-        super(image, width, heigth);
+        super(image, width, heigth, TileType.WATER);
     }
 }

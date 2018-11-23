@@ -12,9 +12,13 @@ public class Hero extends Mover
     private final double drag;
     protected static int leven = 3;
     protected static int levelLevens;
-    public Hero()
+    private CollisionEngine collisionEngine;
+    private TileEngine tileEngine;
+    public Hero(CollisionEngine collisionEngine, TileEngine tileEngine)
     {
         super();
+        this.collisionEngine = collisionEngine;
+        this.tileEngine = tileEngine;
         gravity = 9.807;
         acc = 0.6;
         drag = 0.8;
