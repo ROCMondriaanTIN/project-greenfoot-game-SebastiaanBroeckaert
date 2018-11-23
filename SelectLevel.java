@@ -33,4 +33,10 @@ public class SelectLevel extends World
         addObject(vier, 750, 415);
         addObject(ik, 435, 625);
     }
+    public void act()
+    {
+        Hero.leven = 3;
+        Hero.levelLevens = 0;
+            
+    }
 }

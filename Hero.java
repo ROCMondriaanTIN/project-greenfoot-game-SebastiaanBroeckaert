@@ -72,12 +72,20 @@ public class Hero extends Mover
                 }
             }
         }
+        for(Actor Water: getIntersectingObjects(Water.class))
+        {
+            if (Water != null)
+            {
+                setLocation(95, 2835);
+                return;
+            }
+        }
     }
     public void handleInput()
     {
         if (Greenfoot.isKeyDown("w") && (onGround() == true)
         || Greenfoot.isKeyDown("up") && (onGround() == true)
-        || Greenfoot.isKeyDown("space") && (onGround() == true))
+        || Greenfoot.isKeyDown("space") )
         {
              velocityY = -15;
         }
@@ -98,14 +106,6 @@ public class Hero extends Mover
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
         {
             velocityX += 2;
-        }
-        if(onGround() == false)
-        {
-            setImage("p3_jump.png");
-        }
-        if(onGround() == true)
-        {
-            setImage("p3.png");
         }
     }
     public int getWidth()

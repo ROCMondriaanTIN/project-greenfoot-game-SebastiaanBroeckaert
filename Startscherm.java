@@ -33,6 +33,7 @@ public class Startscherm extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {
+            Punten.punten = 0;
             Greenfoot.setWorld(new Instructie());
         }
     }

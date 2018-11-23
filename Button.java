@@ -23,7 +23,7 @@ public class Button extends Mover
         {
             if(badguy != null)
             {
-                //getWorld().chance("boxAlt.png");
+                //LevelTwee() "1" = "-1";
                 break;
             }
         }

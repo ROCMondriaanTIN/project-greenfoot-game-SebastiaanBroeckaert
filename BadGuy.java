@@ -32,6 +32,10 @@ public class BadGuy extends Mover
         handleInput();
         velocityX *= drag;
         velocityY += acc;
+        if (velocityY > gravity)
+        {
+            velocityY = gravity;
+        }
         applyVelocity();
     }  
     public void handleInput()
@@ -60,7 +64,6 @@ public class BadGuy extends Mover
         {
             velocityX += 2;
         }
-        getImage().mirrorHorizontally();
     }
     public int getWidth()
     {
