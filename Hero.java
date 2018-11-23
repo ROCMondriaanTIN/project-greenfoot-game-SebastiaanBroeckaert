@@ -71,6 +71,7 @@ public class Hero extends Mover
                     Greenfoot.setWorld(new GameOverScherm());
                 }
             }
+
         }
         for(Actor Water: getIntersectingObjects(Water.class))
         {
