@@ -14,6 +14,13 @@ public class Drie extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        click();
+    }  
+    private void click()
+    {
+        if(Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new LevelDrie());
+        }
     }    
 }
