@@ -95,7 +95,7 @@ public class LevelTwee extends World
         Leven up3 = new Leven();
         Leven up4 = new Leven();
         //Declareren en initaliseren van de knop (Button).
-        Button k = new Button();
+        Button k = new Button(te);
         // Creeer een scoreboard
         Punten pu = new Punten();
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.

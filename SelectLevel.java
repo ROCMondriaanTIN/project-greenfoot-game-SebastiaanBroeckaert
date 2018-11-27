@@ -35,7 +35,6 @@ public class SelectLevel extends World
     }
     public void act()
     {
-        Hero.leven = 3;
         Hero.levelLevens = 0;
             
     }

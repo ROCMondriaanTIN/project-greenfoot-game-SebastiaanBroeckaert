@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Dia extends Mover
 {
-    int diaCounter;
+    static int diaCounter;
     public void addedToWorld(World w)
     {
         getWorld();
@@ -30,14 +30,14 @@ public class Dia extends Mover
             if(hero != null)
             {
                 Punten.scoreToevoegenDia();
-                diaCounter ++;
+                diaCounter += 9;
                 getWorld().removeObject(this);
                 return;
             }
-            if(diaCounter == 9)
+        }
+        if(diaCounter == 9)
             {
                 Greenfoot.setWorld(new BonusEen());
             }
-        }
     }    
 }

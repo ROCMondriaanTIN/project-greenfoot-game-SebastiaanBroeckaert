@@ -12,13 +12,9 @@ public class Hero extends Mover
     private final double drag;
     protected static int leven = 3;
     protected static int levelLevens;
-    private CollisionEngine collisionEngine;
-    private TileEngine tileEngine;
-    public Hero(CollisionEngine collisionEngine, TileEngine tileEngine)
+    public Hero()
     {
         super();
-        this.collisionEngine = collisionEngine;
-        this.tileEngine = tileEngine;
         gravity = 9.807;
         acc = 0.6;
         drag = 0.8;
@@ -75,29 +71,17 @@ public class Hero extends Mover
                     Greenfoot.setWorld(new GameOverScherm());
                 }
             }
-
         }
         for(Actor Water: getIntersectingObjects(Water.class))
         {
             if (Water != null)
             {
-                leven --;
-                if(leven != 0)
-                {
-                    //if(World == MyWorld())
-                    //{
-                        setLocation(95, 2835);
-                        return;
-                    //}
-                    
-                }
-                else
-                {
-                    Greenfoot.setWorld(new GameOverScherm());
-                }
+                setLocation(95, 2835);
+                return;
             }
         }
     }
+<<<<<<< HEAD
     public void handleInput()
     {
         if (Greenfoot.isKeyDown("w") && (onGround() == true)
@@ -105,6 +89,12 @@ public class Hero extends Mover
         || Greenfoot.isKeyDown("space") )
         {
              velocityY = -15;
+=======
+
+    public void handleInput() {
+        if (Greenfoot.isKeyDown("w")) {
+            velocityY = -20;
+>>>>>>> 4372fff5ea53a9c16ee13c8083969eac7aeee2f9
         }
         if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
         {

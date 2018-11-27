@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Startscherm extends World
 {
+    int tijd = 0;
     /**
      * Constructor for objects of class startscherm.
      * 
@@ -16,6 +17,7 @@ public class Startscherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1);
+        Dia.diaCounter = 0;
         Greenfoot.start();
         
         prepare();
@@ -31,9 +33,10 @@ public class Startscherm extends World
     }
     public void act()
     {
-        if(Greenfoot.isKeyDown("space"))
+        tijd ++;
+        if(tijd >= 10 && Greenfoot.isKeyDown("space"))
         {
-            Punten.punten = 0;
+            Hero.leven = 3;
             Greenfoot.setWorld(new Instructie());
         }
     }
