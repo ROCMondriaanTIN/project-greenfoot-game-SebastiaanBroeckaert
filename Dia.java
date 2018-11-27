@@ -30,7 +30,7 @@ public class Dia extends Mover
             if(hero != null)
             {
                 Punten.scoreToevoegenDia();
-                diaCounter += 9;
+                diaCounter ++;
                 getWorld().removeObject(this);
                 return;
             }
