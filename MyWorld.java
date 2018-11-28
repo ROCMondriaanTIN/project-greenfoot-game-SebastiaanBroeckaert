@@ -107,7 +107,6 @@ public class MyWorld extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 95, 2835);
-        addObject(new Enemy(), 1170, 410);
         addObject(dia1, 3195, 1335);
         addObject(dia2, 3870, 2055);
         addObject(up1, 195, 2235);
@@ -115,6 +114,9 @@ public class MyWorld extends World {
         addObject(up3, 3215, 2055);
         addObject(up4, 6765, 2835);
         addObject(pu, 830, 45);
+        addObject(new Hart(), 170, 45);
+        addObject(new Vlag(), 95, 2835);
+        addObject(new Vlag(), 505, 2055);
         
         // Force act zodat de camera op de juist plek staat.
         camera.act();

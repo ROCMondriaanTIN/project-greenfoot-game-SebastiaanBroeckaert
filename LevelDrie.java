@@ -112,6 +112,9 @@ public class LevelDrie extends World
         //Deze klasse moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero(ce, te);
         
+        //Declareren en initialiseren van de KeyBleu klassen
+        KeyBlue key = new KeyBlue(te);
+        
         Dia dia1 = new Dia();
         Dia dia2 = new Dia();
         //Declareren en initialiseren van de leven klassen
@@ -126,14 +129,23 @@ public class LevelDrie extends World
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 95, 3435);
-        addObject(new Enemy(), 1170, 410);
+        addObject(new Enemy(), 2427, 855);
+        addObject(new Enemy(), 2373, 855);
+        addObject(new Enemy(), 2607, 2055);
+        addObject(new Enemy(), 2525, 2055);
+        addObject(new Enemy(), 2433, 2055);
+        addObject(new Enemy(), 2187, 1155);
         addObject(dia1, 2385, 3735);
         addObject(dia2, 3515, 2895);
-        addObject(up1, 900, 2295);
-        addObject(up2, 205, 1575);
-        addObject(up3, 2155, 1935);
-        addObject(up4, 4480, 2655);
+        addObject(up1, 1475, 3075);
+        addObject(up2, 3325, 3735);
+        addObject(up3, 3690, 2235);
+        addObject(up4, 3890, 615);
         addObject(pu, 830, 45);
+        addObject(new Hart(), 50, 50);
+        addObject(new Vlag(), 95, 3435);
+        addObject(new Vlag(), 4195, 3495);
+        addObject(key, 4230, 1035);
         
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.

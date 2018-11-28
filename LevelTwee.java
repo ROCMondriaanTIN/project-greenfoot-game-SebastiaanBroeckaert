@@ -102,8 +102,7 @@ public class LevelTwee extends World
         camera.follow(hero);
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 170, 2235);
-        addObject(new Enemy(), 1170, 410);
+        addObject(hero, 95, 2475);
         addObject(dia1, 1015, 860);
         addObject(dia2, 4380, 850);
         addObject(up1, 900, 2295);
@@ -111,6 +110,9 @@ public class LevelTwee extends World
         addObject(up3, 2155, 1935);
         addObject(up4, 4480, 2655);
         addObject(pu, 830, 45);
+        addObject(new Hart(), 50, 50);
+        addObject(new Vlag(), 95, 2475);
+        addObject(new Vlag(), 2580, 1875);
         addObject(bG, 170, 1210);
         addObject(k, 530, 1220);
         

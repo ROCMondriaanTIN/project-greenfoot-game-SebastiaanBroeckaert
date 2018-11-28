@@ -1,16 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.List;
 
 /**
- * Write a description of class Button here.
+ * Write a description of class KeyBlue here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Button extends Mover
+public class KeyBlue extends Mover
 {
     private TileEngine tileEngine;
-    public Button(TileEngine tileEngine)
+    public KeyBlue(TileEngine tileEngine)
     {
         this.tileEngine = tileEngine;
     }
@@ -21,19 +20,18 @@ public class Button extends Mover
     public void act() 
     {
         applyVelocity();
-        for(Actor badguy : getIntersectingObjects(BadGuy.class))
+        for(Actor hero : getIntersectingObjects(Hero.class))
         {
-            if(badguy != null)
+            if(hero != null)
             {
                 for(Tile tile: getWorld().getObjects(Tile.class)) {
-                    if(tile.type == TileType.BOX) {
+                    if(tile.type == TileType.BLOCK) {
                         tileEngine.removeTile(tile);
-                        setImage("buttonRed_pressed.png");
                     }
                 }
-                
+                getWorld().removeObject(this);
                 break;
             }
         }
-    }    
+    }   
 }

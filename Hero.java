@@ -12,6 +12,8 @@ public class Hero extends Mover
     private final double drag;
     protected static int leven = 3;
     protected static int levelLevens;
+    protected static int x;
+    protected static int y;
     private CollisionEngine collisionEngine;
     private TileEngine tileEngine;
     public Hero(CollisionEngine collisionEngine, TileEngine tileEngine)
@@ -33,14 +35,18 @@ public class Hero extends Mover
         Actor l = getOneIntersectingObject(Leven.class);
         if(l != null)
         {
-            Hero.leven ++;
-            Hero.levelLevens ++;
+            leven ++;
+            levelLevens ++;
             Punten.scoreToevoegenLeven();
             getWorld().removeObject(l);
-            if(levelLevens == 4 /*|| World() == SelectLevel()*/)
+            if(levelLevens == 4)
             {
                 Greenfoot.setWorld(new SelectLevel());
-                Hero.levelLevens = 0;
+                levelLevens = 0;
+            }
+            if(leven >= 99)
+            {
+                leven = 25;
             }
         }
     }
@@ -65,7 +71,7 @@ public class Hero extends Mover
                 {
                     //if(World == MyWorld())
                     //{
-                        setLocation(95, 2835);
+                        setLocation(x, y);
                         return;
                     //}
                     
@@ -86,7 +92,7 @@ public class Hero extends Mover
                 {
                     //if(World == MyWorld())
                     //{
-                        setLocation(95, 2835);
+                        setLocation(x, y);
                         return;
                     //}
                     
