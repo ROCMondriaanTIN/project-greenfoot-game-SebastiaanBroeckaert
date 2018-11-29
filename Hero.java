@@ -69,12 +69,8 @@ public class Hero extends Mover
                 leven --;
                 if(leven != 0)
                 {
-                    //if(World == MyWorld())
-                    //{
                         setLocation(x, y);
                         return;
-                    //}
-                    
                 }
                 else
                 {
@@ -90,12 +86,8 @@ public class Hero extends Mover
                 leven --;
                 if(leven != 0)
                 {
-                    //if(World == MyWorld())
-                    //{
                         setLocation(x, y);
                         return;
-                    //}
-                    
                 }
                 else
                 {
@@ -108,7 +100,7 @@ public class Hero extends Mover
     {
         if (Greenfoot.isKeyDown("w") && (onGround() == true)
         || Greenfoot.isKeyDown("up") && (onGround() == true)
-        || Greenfoot.isKeyDown("space") )
+        || Greenfoot.isKeyDown("space") && (onGround() == true))
         {
              velocityY = -15;
         }

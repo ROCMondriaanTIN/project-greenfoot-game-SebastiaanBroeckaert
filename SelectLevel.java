@@ -35,6 +35,5 @@ public class SelectLevel extends World
     public void act()
     {
         Hero.levelLevens = 0;
-            
     }
 }
