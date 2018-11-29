@@ -19,17 +19,7 @@ public class Startscherm extends World
         super(1000, 800, 1);
         Dia.diaCounter = 0;
         Greenfoot.start();
-        
-        prepare();
-    }
-    
-    /**
-     * Maakt de startscherm mooi.
-     */
-    private void prepare()
-    {
-        StartschermAfbeelding startscherm = new StartschermAfbeelding();
-        addObject(startscherm, 500, 400);
+        this.setBackground("Startscherm.png");
     }
     public void act()
     {

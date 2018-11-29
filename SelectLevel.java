@@ -16,17 +16,16 @@ public class SelectLevel extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1); 
+        this.setBackground("Select_Level.png");
         prepare();
     }
     private void prepare()
     {
-        Select select = new Select();
         Een een = new Een();
         Twee twee = new Twee();
         Drie drie = new Drie();
         Vier vier = new Vier();
         Instructieknop ik = new Instructieknop();
-        addObject(select, 500, 400);
         addObject(een, 150, 415);
         addObject(twee, 350, 415);
         addObject(drie, 550, 415);

@@ -16,11 +16,13 @@ public class Instructie extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1);
-        prepare();
+        this.setBackground("InstructieScherm2.0.png");
     }
-    private void prepare()
+    public void act() 
     {
-        Instr instr = new Instr();
-        addObject(instr, 500, 400);
+        if(Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new SelectLevel());
+        }
     }
 }

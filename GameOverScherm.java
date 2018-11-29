@@ -17,13 +17,8 @@ public class GameOverScherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1);
+        this.setBackground("Game_Over.png");
         Punten.punten = 0;
-        prepare();
-    }
-    private void prepare()
-    {
-        GameOver go = new GameOver();
-        addObject(go, 500, 400);
     }
     public void act()
     {
