@@ -19,10 +19,6 @@ public class BadGuy extends Mover
         drag = 0.8;
         setImage("nudercover_three_eye.png");
     }
-    public void addedToWorld(World w)
-    {
-        getWorld();
-    }
     /**
      * Act - do whatever the BadGuy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

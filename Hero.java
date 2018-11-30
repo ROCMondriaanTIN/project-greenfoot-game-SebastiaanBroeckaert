@@ -26,15 +26,12 @@ public class Hero extends Mover
         drag = 0.8;
         setImage("p3.png");
     }
-    public void addedToWorld(World w)
-    {
-        getWorld();
-    }
     public void levens()
     {
         Actor l = getOneIntersectingObject(Leven.class);
         if(l != null)
         {
+            Greenfoot.playSound("floop2_x.wav");
             leven ++;
             levelLevens ++;
             Punten.scoreToevoegenLeven();
@@ -69,8 +66,9 @@ public class Hero extends Mover
                 leven --;
                 if(leven != 0)
                 {
-                        setLocation(x, y);
-                        return;
+                    Greenfoot.playSound("gulp_x.wav");
+                    setLocation(x, y);
+                    return;
                 }
                 else
                 {
@@ -86,8 +84,9 @@ public class Hero extends Mover
                 leven --;
                 if(leven != 0)
                 {
-                        setLocation(x, y);
-                        return;
+                    Greenfoot.playSound("bubbling2.wav");  
+                    setLocation(x, y);
+                    return;
                 }
                 else
                 {
@@ -102,7 +101,8 @@ public class Hero extends Mover
         || Greenfoot.isKeyDown("up") && (onGround() == true)
         || Greenfoot.isKeyDown("space") && (onGround() == true))
         {
-             velocityY = -15;
+            Greenfoot.playSound("boing_x.wav"); 
+            velocityY = -15;
         }
         if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
         {

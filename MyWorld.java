@@ -78,8 +78,6 @@ public class MyWorld extends World {
 {6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48},
 
         };
-        
-
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
         TileEngine te = new TileEngine(this, 60, 60, map);
         te.setTileFactory(new TileFactory());
@@ -117,11 +115,13 @@ public class MyWorld extends World {
         addObject(new Hart(), 170, 45);
         addObject(new Vlag(), 95, 2835);
         addObject(new Vlag(), 505, 2055);
+        addObject(new Tekst(), 395, 2700);
         
         // Force act zodat de camera op de juist plek staat.
+        
         camera.act();
         hero.act();
-
+        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
@@ -129,7 +129,8 @@ public class MyWorld extends World {
         ce.addCollidingMover(hero);
     }
     @Override
-    public void act() {
+    public void act()
+    {
         ce.update();
     }
 }

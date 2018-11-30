@@ -24,6 +24,7 @@ public class KeyBlue extends Mover
         {
             if(hero != null)
             {
+                Greenfoot.playSound("floop2_x.wav");
                 for(Tile tile: getWorld().getObjects(Tile.class)) {
                     if(tile.type == TileType.BLOCK) {
                         tileEngine.removeTile(tile);

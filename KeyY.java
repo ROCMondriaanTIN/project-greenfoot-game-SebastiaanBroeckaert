@@ -24,6 +24,7 @@ public class KeyY extends Mover
         {
             if(hero != null)
             {
+                Greenfoot.playSound("floop2_x.wav");
                 for(Tile tile: getWorld().getObjects(Tile.class)) {
                     if(tile.type == TileType.YLOCK) {
                         tileEngine.removeTile(tile);

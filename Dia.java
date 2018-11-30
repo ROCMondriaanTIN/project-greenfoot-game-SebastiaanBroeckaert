@@ -9,10 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Dia extends Mover
 {
     static int diaCounter;
-    public void addedToWorld(World w)
-    {
-        getWorld();
-    }
     public Dia()
     {
         super();
@@ -29,6 +25,7 @@ public class Dia extends Mover
         {
             if(hero != null)
             {
+                Greenfoot.playSound("floop2_x.wav");
                 Punten.scoreToevoegenDia();
                 diaCounter ++;
                 getWorld().removeObject(this);
