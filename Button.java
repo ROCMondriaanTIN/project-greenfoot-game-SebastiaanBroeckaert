@@ -25,7 +25,6 @@ public class Button extends Mover
         {
             if(badguy != null)
             {
-                Greenfoot.playSound("floop2_x.wav");
                 for(Tile tile: getWorld().getObjects(Tile.class)) {
                     if(tile.type == TileType.BOX) {
                         tileEngine.removeTile(tile);

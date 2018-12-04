@@ -18,7 +18,7 @@ public class LevelDrie extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
-        this.setBackground("Bergen.jpg");
+        this.setBackground("1_Bg.png");
         
         int[][] map = {
             {173,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,173,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,173,173,173,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,173},

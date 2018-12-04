@@ -41,7 +41,7 @@ public class Hero extends Mover
                 Greenfoot.setWorld(new SelectLevel());
                 levelLevens = 0;
             }
-            if(leven >= 99)
+            if(leven >= 25)
             {
                 leven = 25;
             }
