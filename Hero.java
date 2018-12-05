@@ -14,6 +14,7 @@ public class Hero extends Mover
     protected static int levelLevens;
     protected static int x;
     protected static int y;
+    int tijd = 0;
     private CollisionEngine collisionEngine;
     private TileEngine tileEngine;
     public Hero(CollisionEngine collisionEngine, TileEngine tileEngine)
@@ -75,7 +76,6 @@ public class Hero extends Mover
                     Greenfoot.setWorld(new GameOverScherm());
                 }
             }
-
         }
         for(Actor Water: getIntersectingObjects(Water.class))
         {
@@ -91,6 +91,17 @@ public class Hero extends Mover
                 else
                 {
                     Greenfoot.setWorld(new GameOverScherm());
+                }
+            }
+        }
+        for(Actor lader: getIntersectingObjects(Lader.class))
+        {
+            if (lader != null)
+            {
+                if(Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")
+                || Greenfoot.isKeyDown("space"))
+                {
+                    velocityY = -8;
                 }
             }
         }
@@ -115,12 +126,28 @@ public class Hero extends Mover
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("a")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("left"))
         {
-            velocityX -= 2;
+            velocityX -= 5;
         }
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("d")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
         {
-            velocityX += 2;
+            velocityX += 5;
+        }
+        tijd ++;
+        if(tijd >= 10 && Greenfoot.isKeyDown("r"))
+        {
+            leven --;
+            tijd = 0;
+            if(leven != 0)
+                {
+                    Greenfoot.playSound("gulp_x.wav");  
+                    setLocation(x, y);
+                    return;
+                }
+                else
+                {
+                    Greenfoot.setWorld(new GameOverScherm());
+                }
         }
     }
     public int getWidth()
@@ -134,6 +161,14 @@ public class Hero extends Mover
     boolean onGround()
     {
         Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
-        return under != null;
+        Tile tile = (Tile) under;
+        if(tile != null)
+        {
+            if(tile.isSolid)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

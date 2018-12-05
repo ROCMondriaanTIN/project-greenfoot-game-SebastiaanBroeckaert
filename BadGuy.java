@@ -17,7 +17,7 @@ public class BadGuy extends Mover
         gravity = 9.807;
         acc = 0.6;
         drag = 0.8;
-        setImage("nudercover_three_eye.png");
+        setImage("undercover_three_eye.png");
     }
     /**
      * Act - do whatever the BadGuy wants to do. This method is called whenever

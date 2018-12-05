@@ -17,5 +17,6 @@ public enum TileType {
     GLOCK,
     RLOCK,
     YLOCK,
+    LADER,
     // Add your own tile types here
 }

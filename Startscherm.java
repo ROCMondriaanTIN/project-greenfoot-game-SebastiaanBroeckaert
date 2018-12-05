@@ -17,7 +17,6 @@ public class Startscherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1);
-        Dia.diaCounter = 0;
         Greenfoot.start();
         this.setBackground("Startscherm.png");
     }
@@ -27,6 +26,8 @@ public class Startscherm extends World
         if(tijd >= 10 && Greenfoot.isKeyDown("space"))
         {
             Hero.leven = 3;
+            Dia.diaCounter = 0;
+            Punten.punten = 0;
             Greenfoot.setWorld(new Instructie());
         }
     }

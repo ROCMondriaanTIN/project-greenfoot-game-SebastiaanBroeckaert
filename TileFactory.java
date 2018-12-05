@@ -33,7 +33,7 @@ public class TileFactory {
                 tile = new Water("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.WATER);
                 break;
             case 11:
-                tile = new Tile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.WATER);
+                tile = new Water("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.WATER);
                 break;
             case 12:
                 tile = new Tile("signExit.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -135,10 +135,10 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;
             case 94:
-                tile = new Tile("ladder_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Lader("ladder_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.LADER);
                 break;
             case 95:
-                tile = new Tile("ladder_top.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Lader("ladder_top.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.LADER);
                 break;
             case 100:
                 tile = new Tile("lock_blue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.BLOCK);
@@ -213,7 +213,6 @@ public class TileFactory {
                 break;
             default:
                 tile = new Tile("Bariere.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = true;
                 break;
         }
         return tile;

@@ -8,13 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Water extends Tile
 {
-    /**
-     * Act - do whatever the Water wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-    }  
     public Water(String image, int width, int heigth, TileType type)
     {
         super(image, width, heigth, TileType.WATER);

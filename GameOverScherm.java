@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameOverScherm extends World
 {
-
     /**
      * Constructor for objects of class GameOverScherm.
      * 
@@ -17,8 +16,8 @@ public class GameOverScherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1);
+        addObject(new Punten(), 500, 400);
         this.setBackground("Game_Over.png");
-        Punten.punten = 0;
     }
     public void act()
     {
