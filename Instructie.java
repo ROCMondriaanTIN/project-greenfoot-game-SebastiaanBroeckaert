@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Instructie here.
  * 
@@ -8,6 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Instructie extends World
 {
+    int tijd = 0;
     /**
      * Constructor for objects of class Instructie.
      * 
@@ -20,6 +20,11 @@ public class Instructie extends World
     }
     public void act() 
     {
+        tijd ++;
+        if(tijd >= 10 && Greenfoot.isKeyDown("space"))
+        {
+            Greenfoot.setWorld(new SelectLevel());
+        }
         if(Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new SelectLevel());
