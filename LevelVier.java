@@ -112,6 +112,10 @@ public class LevelVier extends World
         addObject(new Enemy(), 80, 260);
         addObject(new Enemy(), 2005, 500);
         addObject(new Enemy(), 1925, 500);
+        addObject(new Enemy(), 870, 2065);
+        addObject(new Enemy(), 1845, 2845);
+        addObject(new Enemy(), 1305, 2845);
+        addObject(new Enemy(), 755, 2845);
         addObject(dia1, 2120, 255);
         addObject(dia2, 130, 2415);
         addObject(up1, 915, 915);
