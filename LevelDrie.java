@@ -143,7 +143,7 @@ public class LevelDrie extends World
         addObject(up4, 3890, 615);
         addObject(pu, 830, 45);
         addObject(new Hart(), 50, 50);
-        addObject(new Vlag(), 95, 3435);
+        addObject(new Vlag(), 130, 3435);
         addObject(new Vlag(), 4195, 3495);
         addObject(key, 4230, 1035);
         
