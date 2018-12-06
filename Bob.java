@@ -19,7 +19,7 @@ public class Bob extends Mover
         applyVelocity();
         for(Actor hero : getIntersectingObjects(Hero.class))
         {
-            if(hero != null)
+            if(hero != null && Hero.levelLevens == 3)
             {
                 Greenfoot.setWorld(new ChitChat());
             }

@@ -79,20 +79,24 @@ public class BadGuy extends Mover
         if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
         {
             velocityX = -5;
+            animationLeft();
         }
         if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             velocityX = 5;
+            animationRight();
         }
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("a")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("left"))
         {
             velocityX -= 2;
+            animationLeft();
         }
         if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("d")
         || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
         {
             velocityX += 2;
+            animationRight();
         }
     }
     public int getWidth()
@@ -110,47 +114,47 @@ public class BadGuy extends Mover
     }
     public void animationRight()
     {
-        if(frame == 1 && onGround() == true)
+        if(frame == 1)
         {
                 setImage(run1r);
         }
-        else if(frame == 2 && onGround() == true)
+        else if(frame == 2)
         {
                 setImage(run2r);
         }   
-        else if(frame == 3 && onGround() == true)
+        else if(frame == 3)
         {
                 setImage(run3r);
         }
-        else if(frame == 4 && onGround() == true)
+        else if(frame == 4)
         {
                 setImage(run4r);
         }
-        else if(frame == 5 && onGround() == true)
+        else if(frame == 5)
         {
                 setImage(run5r);
         }
-        else if(frame == 6 && onGround() == true)
+        else if(frame == 6)
         {
                 setImage(run6r);
         }
-        else if(frame == 7 && onGround() == true)
+        else if(frame == 7)
         {
                 setImage(run7r);
         }
-        else if(frame == 8 && onGround() == true)
+        else if(frame == 8)
         {
                 setImage(run8r);
         }
-        else if(frame == 9 && onGround() == true)
+        else if(frame == 9)
         {
                 setImage(run9r);
         }
-        else if(frame == 10 && onGround() == true)
+        else if(frame == 10)
         {
                 setImage(run10r);
         }
-        else if(frame == 1 && onGround() == true)
+        else if(frame == 11)
         {
                 setImage(run11r);
                 frame = 1;
@@ -159,47 +163,47 @@ public class BadGuy extends Mover
     }
     public void animationLeft()
     {
-        if(frame == 1 && onGround() == true)
+        if(frame == 1)
         {
                 setImage(run1l);
         }
-        else if(frame == 2 && onGround() == true)
+        else if(frame == 2)
         {
                 setImage(run2l);
         }   
-        else if(frame == 3 && onGround() == true)
+        else if(frame == 3)
         {
                 setImage(run3l);
         }
-        else if(frame == 4 && onGround() == true)
+        else if(frame == 4)
         {
                 setImage(run4l);
         }
-        else if(frame == 5 && onGround() == true)
+        else if(frame == 5)
         {
                 setImage(run5l);
         }
-        else if(frame == 6 && onGround() == true)
+        else if(frame == 6)
         {
                 setImage(run6l);
         }
-        else if(frame == 7 && onGround() == true)
+        else if(frame == 7)
         {
                 setImage(run7l);
         }
-        else if(frame == 8 && onGround() == true)
+        else if(frame == 8)
         {
                 setImage(run8l);
         }
-        else if(frame == 9 && onGround() == true)
+        else if(frame == 9)
         {
                 setImage(run9l);
         }
-        else if(frame == 10 && onGround() == true)
+        else if(frame == 10)
         {
                 setImage(run10l);
         }
-        else if(frame == 1 && onGround() == true)
+        else if(frame == 11)
         {
                 setImage(run11l);
                 frame = 1;

@@ -120,12 +120,12 @@ public class LevelVier extends World
         addObject(dia2, 130, 2415);
         addObject(up1, 915, 915);
         addObject(up2, 1055, 2295);
-        addObject(up3, 1290, 2835);
+        addObject(up3, 1200, 2835);
         addObject(b, 2130, 3255);
         addObject(pu, 830, 45);
         addObject(new Hart(), 170, 45);
         addObject(new Vlag(), 220, 260);
-        addObject(new Vlag(), 505, 2060);
+        addObject(new Vlag(), 2046, 1760);
         addObject(new KeyBlue(te), 120, 915);
         addObject(new KeyG(te), 490, 2835);
         addObject(new KeyR(te), 290, 2055);
