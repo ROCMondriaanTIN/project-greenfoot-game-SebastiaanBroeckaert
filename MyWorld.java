@@ -113,7 +113,7 @@ public class MyWorld extends World {
         addObject(up4, 6765, 2835);
         addObject(pu, 830, 45);
         addObject(new Hart(), 170, 45);
-        addObject(new Vlag(), 95, 2835);
+        addObject(new Vlag(), 210, 2835);
         addObject(new Vlag(), 505, 2055);
         addObject(new Tekst(), 395, 2700);
         
